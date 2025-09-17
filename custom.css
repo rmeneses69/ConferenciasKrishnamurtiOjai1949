@@ -1,0 +1,294 @@
+/* custom.css — VERSIÓN DEFINITIVA: Tarjetas de párrafo marcadas, título centralizado, número romano como sello */
+
+:root {
+  /* 🌿 Colores óptimos para lectura ágil y serena */
+  --bg-primary: #f8f5f0;           /* Tono crema suave — papel de libro antiguo */
+  --text-primary: #2e2e2e;         /* Gris oscuro muy cálido — ideal para legibilidad */
+  --shadow-elegant: rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 6px 20px var(--shadow-elegant);
+  --accent: #e74c3c;
+  --primary: #2c3e50;
+  --secondary: #4a5568;
+  --border-radius: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Palatino Linotype", "Georgia", serif;
+  line-height: 1.95;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  padding: 2rem 1rem;
+  max-width: 950px;
+  margin: 0 auto;
+  word-spacing: 0.05em;
+  letter-spacing: -0.01em;
+  counter-reset: section;
+}
+
+/* ===== TÍTULO CENTRALIZADO + NÚMERO ROMANO COMO SELLO ===== */
+.header-panel {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  padding: 3rem 2rem;
+  position: relative;
+}
+
+.header-panel h1 {
+  font-size: 2.4rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-family: "Palatino Linotype", Georgia, serif;
+  letter-spacing: -0.5px;
+}
+
+.header-panel .roman-number {
+  display: inline-block;
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--secondary);
+  font-family: "Palatino Linotype", Georgia, serif;
+  margin: 0.5rem 0;
+  opacity: 0.9;
+  letter-spacing: -2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  font-variant: small-caps;
+}
+
+.header-panel p {
+  color: var(--secondary);
+  font-style: italic;
+  font-size: 1.15rem;
+  margin-top: 0.8rem;
+  font-family: "Palatino Linotype", Georgia, serif;
+  opacity: 0.9;
+}
+
+/* 🌟 NUEVO: CADA <p> ES UNA TARJETA IGUAL A .question, SIN BORDE LATERAL */
+.content-panel p {
+  margin-bottom: 3.5rem;
+  text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.95;
+  font-family: "Palatino Linotype", Georgia, serif;
+  color: var(--text-primary);
+  padding: 2.2rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.content-panel p:hover {
+  box-shadow: 0 8px 25px var(--shadow-elegant);
+  transform: translateY(-2px);
+}
+
+
+/* ===== CITAS DESTACADAS ===== */
+.quote {
+  font-style: italic;
+  border-left: 5px solid var(--accent);
+  padding-left: 2rem;
+  margin: 3rem 0;
+  color: var(--secondary);
+  background-color: rgba(231, 76, 60, 0.04);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.quote::before {
+  content: """;
+  position: absolute;
+  left: -12px;
+  top: -12px;
+  font-size: 4.5rem;
+  color: rgba(231, 76, 60, 0.1);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+/* ===== PREGUNTAS Y RESPUESTAS ===== */
+.question, .answer {
+  margin: 3.5rem 0;
+  padding: 2.2rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-card);
+  font-family: "Palatino Linotype", Georgia, serif;
+  border-left: 4px solid #9b59b6;
+  position: relative;
+}
+
+.question strong {
+  color: #9b59b6;
+}
+
+.answer strong {
+  color: #e74c3c;
+}
+
+/* ===== TÍTULOS DE SECCIÓN (h2) ===== */
+h2 {
+  font-size: 1.9rem;
+  color: var(--secondary);
+  margin: 3rem 0 2rem;
+  text-align: center;
+  font-family: "Palatino Linotype", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  position: relative;
+  padding: 1rem 0;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background-color: var(--accent);
+  border-radius: 1px;
+}
+
+/* ===== FOOTER ===== */
+.footer-panel {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-card);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  margin-top: 6rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Palatino Linotype", Georgia, serif;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-panel p {
+  color: var(--secondary);
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+
+.footer-panel p strong {
+  color: var(--primary);
+}
+
+/* ===== RESPONSIVE ADAPTATION ===== */
+@media (max-width: 700px) {
+  body {
+    padding: 1.5rem;
+  }
+
+  .header-panel {
+    padding: 2rem 1rem;
+  }
+
+  .header-panel h1 {
+    font-size: 2rem;
+  }
+
+  .header-panel .roman-number {
+    font-size: 3rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin: 2.5rem 0 1.5rem;
+  }
+
+  .quote,
+  .question,
+  .answer {
+    padding: 1.6rem;
+    font-size: 1rem;
+  }
+
+  .footer-panel {
+    padding: 2rem 1.5rem;
+  }
+
+  .footer-panel p {
+    font-size: 0.85rem;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+body > * {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+ .back-to-index-btn {
+    position: fixed;
+    top: 50%;           /* Centrado verticalmente a la mitad de la ventana */
+    right: 0;           /* Pegado al borde derecho */
+    transform: translateY(-50%); /* Ajuste para centrar verticalmente el botón respecto a top:50% */
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-card);
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border: none;
+    outline: none;
+    /* Evita que se mueva con el scroll horizontal */
+    left: unset;
+  }
+
+  .back-to-index-btn:hover {
+    opacity: 1;
+    transform: translateY(-50%) translateX(5px); /* Se desplaza ligeramente hacia la izquierda al pasar el cursor */
+    box-shadow: 0 8px 25px var(--shadow-elegant);
+  }
+
+  .back-to-index-btn span {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .back-to-index-btn:hover span {
+    transform: translateX(-2px);
+  }
+
+  /* Ajuste para móviles: lo acercamos un poco más hacia adentro */
+  @media (max-width: 700px) {
+    .back-to-index-btn {
+      width: 45px;
+      height: 45px;
+      font-size: 1.6rem;
+      right: 1rem; /* Pequeño margen para evitar borde en móviles */
+    }
+  }
