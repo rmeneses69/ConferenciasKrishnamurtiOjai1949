@@ -111,7 +111,7 @@ body {
 }
 
 .quote::before {
-  content: """;
+  content: "";
   position: absolute;
   left: -12px;
   top: -12px;
@@ -122,7 +122,7 @@ body {
 }
 
 /* ===== PREGUNTAS Y RESPUESTAS ===== */
-.question, .answer {
+.question {
   margin: 3.5rem 0;
   padding: 2.2rem;
   background-color: rgba(255, 255, 255, 0.95);
@@ -133,6 +133,16 @@ body {
   position: relative;
 }
 
+ .answer {
+  margin: 3.5rem 0;
+  padding: 2.2rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-card);
+  font-family: "Palatino Linotype", Georgia, serif;
+  border-left: 4px solid #e74c3c;
+  position: relative;
+}
 .question strong {
   color: #9b59b6;
 }
